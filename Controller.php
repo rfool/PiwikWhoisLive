@@ -50,7 +50,8 @@ class Piwik_WhoisLive_Controller extends Piwik_Controller
 		else Piwik::checkUserHasViewAccess( $idSite );
 		$visitors = $this->loadLastVisitorDetailsFromDatabase( null, $idSite, $limit, $minIdVisit, $unknownOnly );
 		foreach( $visitors as $key => $row ) {
-			$row['ip'] = long2ip( $row['location_ip'] );
+			//$row['ip'] = long2ip( $row['location_ip'] );
+			$row['ip'] = Piwik_IP::N2P( $row['location_ip'] );
 
 //			$row['location_provider'] = Piwik_( $row['location_provider'] );
 //			$row['location_geoip_continent'] = Piwik_( $row['location_geoip_continent'] );
