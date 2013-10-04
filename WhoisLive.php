@@ -4,7 +4,6 @@
  * 
  * @link http://piwik.org
  * @license http://www.gnu.org/licenses/gpl-3.0.html Gpl v3 or later
- * @version $Id: $
  * 
  * @category Piwik_Plugins
  * @package Piwik_WhoisLive
@@ -28,7 +27,14 @@ class Piwik_WhoisLive extends Piwik_Plugin
 		);
 	}
 
-	function postLoad()
+	public function getListHooksRegistered()
+	{
+		return array(
+			'WidgetsList.add' => 'addWidgets'
+		);
+	}
+
+	public function addWidgets()
 	{
 		Piwik_AddWidget('WhoisLive_widgets', 'WhoisLive_widget', 'WhoisLive', 'widget');
 	}
