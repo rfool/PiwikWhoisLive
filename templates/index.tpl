@@ -44,7 +44,7 @@ $(document).ready(function() {
 			<td style="overflow:hidden">
 				{$row.ip}<br/>
 				{$row.location_provider|escape:"html"}<br/>
-				{$row.location_geoip_country|escape:"html"} / {$row.location_geoip_city|escape:"html"}
+				{$row.location_country|escape:"html"} / {$row.location_city|escape:"html"}
 			</td>
 			<td style="overflow:hidden">
 				<img src="{$row.config_os_logo|escape:"urlpathinfo"}" /> {$row.config_os|escape:"html"} / {$row.config_resolution|escape:"html"}<br />
